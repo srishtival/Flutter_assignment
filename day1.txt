@@ -1,0 +1,200 @@
+void main()
+{
+  print("Hello Dart");
+  
+  int num1 =5;
+  int num2 = 4;
+  int sum = num1 + num2;
+  print("The sum of $num1 and $num2 is $sum");
+  
+  String str1 = "Hello, ";
+  String str2 = "World!";
+  String result = str1+str2;
+  print(result);
+  
+  String str='Coding is';
+  String Str1 = 'Fun';
+  bool val = (str==Str1);
+  print(val);
+  
+  List<int>numbers = [1,2,3,4,5];
+  print("Numbers:$numbers");
+  print("First element: ${numbers[0]}");
+  print("Second element: ${numbers[1]}");
+  numbers.add(6);
+  numbers.remove(3);
+  print("After removing 3: $numbers");
+  int length = numbers.length;
+  print("Length of the list: $length");
+}
+
+
+void main()
+{
+  Map<String, String> capitals = {
+    'USA': 'Washington, D.C.',
+    'France':'Paris',
+    'Japan':'Tokyo',
+  };
+  print("Country-Capital Map: $capitals");
+  print("Capital of USA: ${capitals['USA']}");
+  capitals['Germany']='Berlin';
+  print("After adding Germany: $capitals");
+  print("Country-Capital Paris:");
+  for (var country in capitals.keys){
+    var capital =capitals[country];
+    print("The capital of $country is $capital");
+  }  
+  
+  capitals.remove('France');
+  print("After removing France: $capitals");
+  
+  bool hasJapan = capitals.containsKey('Japan');
+  print("Does the map have Japan as a key? $hasJapan");
+  }
+  
+  
+  void main()
+{
+  int num1 = 4;
+  int num2 = 5;
+  String op = '+';
+  if (op =='+');
+    int sum = num1+num2;
+    print("$num1 + $num2 = $sum");
+    
+  }
+  
+  
+  
+  void main()
+{
+  int i;
+  print("Rollno.s");
+  for(i=1;i<111;i++)
+  {
+    if(i%2==0)
+      continue;
+    print("$i");
+  }
+  }
+  
+  
+  
+  void main()
+{
+  int i;
+  print("Rollno.s");
+  for(i=1;i<111;i++)
+  {
+    if(i==50)
+      break;
+    print("$i");
+  }
+  }
+  
+  
+  
+  void main()
+{
+  
+  for(int i=1;i<=5;i++)
+  {
+    if(i==3){
+      continue;
+    }
+    print("Iteration $i");
+  }
+  }
+  
+  
+  
+  void calculateInterest(double principal,double rate,double time){
+  double interest = principal *rate*time/100;
+  print("Simple Interest is $interest");
+}
+  
+void main(){
+  double principal = 5000;
+  double time=3;
+  double rate=3;
+  calculateInterest(principal,rate,time);
+}
+
+
+
+class Rectangle{
+  double? length;
+  double? breadth;
+  
+  double area(){
+    return length! * breadth!;
+  }
+}
+
+void main(){
+  Rectangle rectangle = Rectangle();
+  rectangle.length = 10;
+  rectangle.breadth = 5;
+  print("The area of the rectangle is ${rectangle}")
+}
+
+
+
+
+
+Assignment:
+import 'dart:math';
+
+String generateRandomPassword({int length = 12}) {
+  const String characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#\$%^&*()_-+=<>?';
+  Random random = Random();
+  
+  String password = '';
+  for (int i = 0; i < length; i++) {
+    int index = random.nextInt(characters.length);
+    password += characters[index];
+  }
+
+  return password;
+}
+
+void main() {
+  String randomPassword = generateRandomPassword(length: 16);
+  print("Generated Password: $randomPassword");
+}
+
+
+
+
+int sumEvenNumbers(List<int> numbers) {
+  return numbers.where((num) => num.isEven).reduce((a, b) => a + b);
+}
+
+void main() {
+  List<int> numbers = [1, 2, 3, 4, 5, 6, 7, 8];
+  print("Sum of even numbers: ${sumEvenNumbers(numbers)}");
+}
+
+
+
+class Book {
+  String name;
+  String author;
+  double price;
+
+  // Constructor
+  Book(this.name, this.author, this.price);
+
+  // Method to display the book details
+  void display() {
+    print('Book Name: $name');
+    print('Author: $author');
+    print('Price: \$${price.toStringAsFixed(2)}');
+  }
+}
+
+void main() {
+  Book myBook = Book('The Dart Programming Language', 'John Doe', 29.99);
+  myBook.display();
+}
